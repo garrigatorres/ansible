@@ -1,0 +1,4 @@
+- name: Download file from HTTP
+  ansible.windows.win_get_url:
+    url: http://192.168.0.2/IC10/Ricoh-9003.ppd
+    dest: '%TEMP%\Ricoh-9003.ppd'
