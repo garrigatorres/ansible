@@ -12,3 +12,8 @@ mkdir templates
 #execute modules and playbooks
 ansible -i ./inventory/hosts ubuntu -m ping --user root --ask-pass
 ansible-playbook ./playbooks/timezone.yml --user root --ask-pass --ask-become-pass -i ./inventory/hosts
+
+#prepare windows hosts
+settings-apps-features-openssh server
+services-opensshserver-start&automatictype
+
