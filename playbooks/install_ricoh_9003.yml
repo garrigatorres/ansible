@@ -1,0 +1,10 @@
+- name: install ricoh
+  hosts: "*"
+  become: yes
+  tasks:
+  - name: install default
+    shell: lpadmin -p Ricoh-9003 -E -v ipp://192.168.0.250/ipp/print -m everywhere
+  - name: copy over the config
+    template: src=../templates/Ricoh-9003.ppd dest=/etc/cups/ppd/Ricoh-9003.ppd
+# - name: modify code
+#   shell: sed -i s/1001/1/g /etc/cups/ppd/Ricoh-9003.ppd
