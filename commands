@@ -1,0 +1,14 @@
+#install ansible
+apt update
+apt install software-properties-common
+add-apt-repository --yes --update ppa:ansible/ansible
+apt install ansible
+
+#create folders
+mkdir inventory
+mkdir playbooks
+mkdir templates
+
+#execute modules and playbooks
+ansible -i ./inventory/hosts ubuntu -m ping --user root --ask-pass
+ansible-playbook ./playbooks/timezone.yml --user root --ask-pass --ask-become-pass -i ./inventory/hosts
