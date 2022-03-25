@@ -17,3 +17,8 @@ ansible-playbook ./playbooks/timezone.yml --user root --ask-pass --ask-become-pa
 settings-apps-features-openssh server
 services-opensshserver-start&automatictype
 
+#prepare linux hosts
+sudo su
+apt install openssh-server
+passwd
+sed s/#PermitRootLogin prohibit-password/PermitRootLogin yes/ /etc/ssh/sshd_config
