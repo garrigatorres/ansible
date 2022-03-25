@@ -1,1 +1,8 @@
 
+- hosts: "ubuntu"
+  become: yes
+  tasks:
+    - name: add user remote
+      shell: useradd -m remote
+    - name: add password to user remote
+      shell: useradd -m remote
