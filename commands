@@ -22,3 +22,4 @@ sudo su
 apt install openssh-server
 passwd
 sed s/#PermitRootLogin prohibit-password/PermitRootLogin yes/ /etc/ssh/sshd_config
+service sshd restart
